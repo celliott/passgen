@@ -2,7 +2,7 @@ version: "3"
 services:
   nginx:
     build: ./nginx
-    image: celliott/nginx:latest
+    image: ${ORGANIZATION}/nginx:latest
     restart: always
     environment:
       - AUTH_USER=${AUTH_USER}
@@ -14,7 +14,7 @@ services:
       - core
   passgen:
     build: ./passgen
-    image: ${CONTAINER}:${VERSION}
+    image: ${ORGANIZATION}/${CONTAINER}:latest
     container_name: ${CONTAINER}
     restart: always
     ports:
