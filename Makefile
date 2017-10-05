@@ -4,7 +4,7 @@ include .env
 
 set-pass :
 	@if [ -z $(AUTH_PASS) ]; then \
-		@echo "AUTH_PASS must be set"; exit 10; \
+		echo "AUTH_PASS must be set"; exit 10; \
 	fi
 
 validate :
