@@ -20,14 +20,18 @@ $ make up
 #### plaintext
 
 ```
-curl http://$AUTH_USER:$AUTH_PASS@127.0.0.1
+$ make get-pass 
+# or
+$ curl http://$AUTH_USER:$AUTH_PASS@127.0.0.1
 HiEN-l0Dz-VQ8b-QdLu
 ```
 
 #### json
 
 ```
-curl http://$AUTH_USER:$AUTH_PASS@127.0.0.1/json
+$ make get-json
+# or
+$ curl http://$AUTH_USER:$AUTH_PASS@127.0.0.1/json
 {
   "password": "HiEN-l0Dz-VQ8b-QdLu"
 }

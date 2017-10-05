@@ -30,5 +30,5 @@ reset : set-pass down up
 get-pass :
 	@curl http://$(AUTH_USER):$(AUTH_PASS)@127.0.0.1
 
-get-pass-json :
+get-json :
 	@curl http://$(AUTH_USER):$(AUTH_PASS)@127.0.0.1/json
