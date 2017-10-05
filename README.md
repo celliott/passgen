@@ -21,10 +21,14 @@ $ make up
 
 ```
 curl http://$AUTH_USER:$AUTH_PASS@127.0.0.1
+HiEN-l0Dz-VQ8b-QdLu
 ```
 
 #### json
 
 ```
 curl http://$AUTH_USER:$AUTH_PASS@127.0.0.1/json
+{
+  "password": "HiEN-l0Dz-VQ8b-QdLu"
+}
 ```
