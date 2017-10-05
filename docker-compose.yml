@@ -1,0 +1,26 @@
+version: "3"
+services:
+  nginx:
+    build: ./nginx
+    image: celliott/nginx:latest
+    restart: always
+    environment:
+      - AUTH_USER=${AUTH_USER}
+      - AUTH_PASS=${AUTH_PASS}
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - core
+  passgen:
+    build: ./passgen
+    image: ${CONTAINER}:${VERSION}
+    container_name: ${CONTAINER}
+    restart: always
+    ports:
+      - "5000:5000"
+    networks:
+      - core
+
+networks:
+    core:
