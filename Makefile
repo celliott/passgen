@@ -1,4 +1,5 @@
-include .env
+include default.mk
+export
 
 .PHONY: up
 
@@ -8,22 +9,25 @@ set-pass :
 	fi
 
 validate :
-	@docker-compose config
+	docker-compose config --quiet
 
 build : validate set-pass
-	@docker-compose build
+	docker-compose build
+
+build : build
+	docker-compose push
 
 up : set-pass
-	@docker-compose up -d
+	docker-compose up -d
 
 down :
-	@docker-compose down
+	docker-compose down
 
 tail :
-	@docker tail -f $(CONTAINER)
+	docker tail -f $(CONTAINER)
 
 shell :
-	@docker exec -ti $(CONTAINER) /bin/bash
+	docker exec -ti $(CONTAINER) /bin/bash
 
 reset : set-pass down up
 
